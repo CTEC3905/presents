@@ -11,3 +11,6 @@ Individual slides can be called by adding ```#/NUMBER``` at the end of the url, 
 See:
 
 - [CTEC3905.github.io/presents/?lecture-01](https://CTEC3905.github.io/presents/?lecture-01)
+- [CTEC3905.github.io/presents/?lecture-02](https://CTEC3905.github.io/presents/?lecture-02)
+- [CTEC3905.github.io/presents/?lecture-03](https://CTEC3905.github.io/presents/?lecture-03)
+- [CTEC3905.github.io/presents/?lecture-04](https://CTEC3905.github.io/presents/?lecture-05)

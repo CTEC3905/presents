@@ -9,11 +9,14 @@
   bottom: 20px;
   color: #d33682;
 }
+.reveal .slides { pointer-events: all; }
+
 .reveal section img {
   margin: 15px 0px;
   border: none;
   box-shadow: none;
   background: none;
+  /* background: rgba(255, 255, 255, .25); */
 }
 .reveal strong,
 .reveal table th { color: #5fabfc; }
@@ -27,13 +30,23 @@
 
 /* NEW STYLES */
 .reveal .slides section.centered { text-align: center; }
-.reveal .slides section.centered h1 { font-size: 3.75em; }
+/* .reveal .slides section.centered h1 { font-size: 3.75em; } */
 .reveal section img.imgBackground { background: #ffffff40; }
 
 
 
 
 /* OLD STYLES */
+
+/* .btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+} */
+
+
+.nomargin { margin: 0; }
+.nopadding { padding: 0; }
 
 .reveal pre { margin: .5em 0; width: 100%; }
 .reveal pre code {
@@ -45,14 +58,18 @@
 .big-pic p img { width: 84%; }
 .reveal li code { color: #9f9; font-size: 1em }
 .reveal p code,
+.reveal dt code,
+.reveal dd code,
 .reveal table code { color: #9f9; }
 .left-align { text-align: left; }
+.centered { text-align: center; }
 
 .reveal ul { margin-bottom: .5em; }
 .reveal li { padding-top: .15em; }
 .reveal blockquote {
   text-align: left;
-  width: 90%;
+  box-sizing: border-box;
+  width: 95%;
   padding: .25em 0 .25em .5em;
 }
 .reveal section {
@@ -72,6 +89,7 @@ button,
 .crammed p,
 .smallcode pre code { font-size: .9em; }
 .midcode pre code { font-size: 1.05em; }
+/* .reveal .smalltext, */
 .reveal .smalltext p,
 .reveal .smalltext ul,
 .reveal .smalltext table { font-size: .75em; }
@@ -102,7 +120,9 @@ button,
   margin-right: 1em;
   margin-top: 0;
 }
-
+.gradient {
+  background: linear-gradient(45deg, #00637c 0%, #002b36 60%);
+}
 
 /* .ext-links a[title^="ext:"]:after {
   position: relative;
