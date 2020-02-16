@@ -127,16 +127,15 @@ How to **upload your changes** to **your GitHub repository**
 
 CSS **media queries** can respond to many factors. The main three are:
 
-**screen**, **print**, **speech**
+| `@media` | for: |
+|:--|:--|
+| `print` |	printers |
+| `screen` | computer screens, tablets, phones… |
+| `speech` | text-to-speech screen readers |
 
 but there's also…
 
-- width/height
-- orientation
-- hover
-- light-level… and more...
-
-Full list: [Using media queries (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+`width`/`height`, `orientation`, `hover`, `light-level`… and more... see [Using media queries (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 
 ---
 
