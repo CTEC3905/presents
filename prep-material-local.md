@@ -1,48 +1,3 @@
-# CTEC3905
-<!-- .slide: class="centered" -->
-
-![HTML, CSS, JavaScript logos](html-css-js-500.png)<!-- .element: class="imgBackground" -->
-
-## **Front-End Web Development**
-
-### Lecture 08
-
-===
-
-# STAFF CONTACTS
-<!-- .slide: class="crammed smalltext" -->
-
-**Module leader:**
-
-General queries and admin issues:
-
-**Graeme Stuart**: gstuart@dmu.ac.uk
-
-<hr>
-
-**Tutors**
-
-- Labs: **Graeme Stuart**: gstuart@dmu.ac.uk
-- Labs: **Fania Raczinski**: fania.raczinski@dmu.ac.uk
-- Lectures: **Dave Everitt**: deveritt@dmu.ac.uk
-
-**Tutor contact outside classes is strictly by email**
-
-===
-
-
-## ONLINE RESOURCES
-<!-- .slide: class="left-align" -->
-
-**Codecademy** free courses:
-
-- [Learn HTML](https://www.codecademy.com/learn/learn-html)
-- [Learn CSS](https://www.codecademy.com/learn/learn-css)
-- [Learn how to build websites](https://www.codecademy.com/learn/paths/learn-how-to-build-websites)
-- [Introduction to JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
-
-===
-
 <!-- JSON -->
 
 # JSON: **01**
@@ -77,16 +32,16 @@ For a more in-depth introduction to APIs in general, see [**"What Are APIs and H
 
 The [Discourse forum](https://www.discourse.org/) has a JSON API. See [discussions on this forum](https://discourse.threejs.org/c/discussion)…
 
-![Discourse Three.js forum](https://raw.githubusercontent.com/front-end-materials/images/master/json-api/discourse-three-js-forum.png)
+![Discourse Three.js forum](https://raw.githubusercontent.com/TECH3015/lectures/master/imgs/json-api/discourse-three-js-forum.png)
 
 ---
 
 # JSON: **04**
 <!-- .slide: class="left-align crammed smalltext" -->
 
-…and **add ".json"** [after a URL](https://discourse.threejs.org/c/discussion.json) for the **JSON data** (use a [JSON beautifier](https://beautifier.io/)):
+…and **add ".json"** [to the end of a URL](https://discourse.threejs.org/c/discussion.json) for the **JSON data**—for readability use a [JSON beautifier](https://beautifier.io/)…
 
-![Discourse Three.js forum JSON](https://raw.githubusercontent.com/front-end-materials/images/master/json-api/discourse-raw-json.png)
+![Discourse Three.js forum JSON](https://raw.githubusercontent.com/TECH3015/lectures/master/imgs/json-api/discourse-raw-json.png)
 
 ---
 
@@ -95,15 +50,14 @@ The [Discourse forum](https://www.discourse.org/) has a JSON API. See [discussio
 
 …or browser plug-in like the [Chrome extension JSONview](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc)):
 
-![Discourse Three.js forum JSON](https://raw.githubusercontent.com/front-end-materials/images/master/json-api/discourse-three-js-forum-json.png)-->
-
+![Discourse Three.js forum JSON](https://raw.githubusercontent.com/TECH3015/lectures/master/imgs/json-api/discourse-three-js-forum-json.png)
 
 ---
 
 # JSON: **06**
 <!-- .slide: class="left-align smalltext smallcode" -->
 
-here, "users" is an **array** of **objects**, so if we fetch this data:
+in the JSON data for this forum, "users" is an **array** of **objects**, so if we fetch this data:
 
 ```js
 {
@@ -120,7 +74,8 @@ here, "users" is an **array** of **objects**, so if we fetch this data:
 //... MUCH MORE DATA!
 ```
 
-…and assign it to a variable `test`, you can get user names with [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map):
+…and assign it to a variable `test`,  
+we can get user names from this Discourse forum with [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map):
 
 ```javascript
 test.users.map(u => u.username)
@@ -130,11 +85,12 @@ test.users.map(u => u.username)
 ---
 
 # JSON **07**
-<!-- .slide: class="left-align crammed smalltext smallcode" -->
+<!-- .slide: class="left-align smalltext smallcode" -->
 
-Rather than the older AJAX method, `fetch`, has **promises** that **wait for a result** and only `.then` **do something**:
+Rather than the older AJAX method, this extract for the Guardian API uses `fetch`, with **promises** that **wait for a result** and only `.then` **do something**:
 
 ```js
+//...
 let theData;
 
 fetch(data-to-fetch)
@@ -152,7 +108,7 @@ fetch(data-to-fetch)
   })
 ```
 
-[JavaScript Promises: an Introduction (developers.google.com)](https://developers.google.com/web/fundamentals/primers/promises)
+- [JavaScript Promises: an Introduction (developers.google.com)](https://developers.google.com/web/fundamentals/primers/promises)
 
 DEMO: [Show Star Wars film info from an API](https://front-end-materials.github.io/json-api/api-starwars/)
 
@@ -161,9 +117,7 @@ DEMO: [Show Star Wars film info from an API](https://front-end-materials.github.
 # JSON: **08**
 <!-- .slide: class="left-align smalltext smallcode" -->
 
-`asyc/await` offers simpler syntax for (e.g.) a `fetch.then` promise:
-
-you can add `try`… `catch` blocks as a *fallback* in case the **API call fails**:
+asyc/await is syntactic sugar for e.g. a `fetch.then` promise:
 
 ```js
 const getUserAsync = async (name) => {
@@ -172,10 +126,12 @@ const getUserAsync = async (name) => {
     let data = await response.json();
     return data;
   } catch (err) {
-    console.log(err); // or a message to the user
+    console.log(err);
   }
 }
 ```
+
+you can add `try`… `catch` blocks as a fallback in case the API call fails
 
 - [Promises, async/await (javascript.info)](https://javascript.info/async)
 - [Why JavaScript Async/Await Is Better Than Plain Promises](https://dev.to/gafi/7-reasons-to-always-use-async-await-over-plain-promises-tutorial-4ej9)
@@ -185,9 +141,10 @@ DEMO: [Get GitHub user details from the GitHub API with `async`](https://front-e
 ---
 
 # JSON: **09**
-<!-- .slide: class="left-align smalltext smallcode" -->
+<!-- .slide: class="left-align smalltext" -->
 
-**JSON has no "parent" or variable assignment**— and is **just data** and starts with an opening `{` or `[`. This example (stored in a website file e.g.  "menu.json") could generate a particular kind of menu:
+**JSON has no "parent" or variable assignment**—it starts with an opening `{` or `[`.  
+This example of local JSON data (stored within a website in a file called, say, "menu.json") could build a special kind of menu:
 
 ```js
 {
@@ -203,33 +160,52 @@ DEMO: [Get GitHub user details from the GitHub API with `async`](https://front-e
 }
 ```
 
-however, **JSON** is **just data**! It *cannot* contain **comments** or **functions** like **JavaScript objects**, so you'd *remove the quotes* from the *function names*
+however, JSON is **just data**! It *cannot* contain **functions** or **comments** like a JavaScript object…
 
 ---
 
 # JSON: **10**
-<!-- .slide: class="left-align smalltext smallcode" -->
+<!-- .slide: class="left-align smalltext" -->
 
-…after getting JSON data from an API, it is assigned to a variable as a **JavaScript object** (e.g. a `const`) to **store the JSON** for use on your website
+…but JSON data *can* be assigned to a variable as a **JavaScript object** (e.g. a `const` if you know the type—object or array) to **store the JSON** for use on your website  
+—you’d write code to *remove quotes* from the *function names* in the `action` values:
 
-- [Introducing JSON](http://www.json.org/ "ECMA-404 The JSON Data Interchange Standard")
-- [JSON Basics: What You Need to Know](https://www.elated.com/articles/json-basics/)
+```js
+const menu = getData(); // get the menu.json here using fetch
+removeQuotes(menu.popup.menuitem); // pass menuitem array to removeQuotes()
+console.log(menu); // will then show:
+{
+  "id": "file",
+  "value": "File",
+  "popup": {
+    "menuitem": [
+      {"label": "New", "url": "/new", "action": createNewDoc()},
+      {"label": "Open", "url": "/open", "action": openDoc()},
+      {"label": "Close", "url": "/close", "action": closeDoc()}
+    ]
+  }
+}
+```
+
+See: [Introducing JSON](http://www.json.org/ "ECMA-404 The JSON Data Interchange Standard") and
+[JSON Basics: What You Need to Know](https://www.elated.com/articles/json-basics/)
 
 ---
 
 # JSON: **11**
 <!-- .slide: class="left-align smalltext" -->
 
-here’s the raw **JSON data** for the [current solar weather](https://services.swpc.noaa.gov/products/geospace/planetary-k-index-dst.json), often used to **predict aurora displays** in the Arctic Circle
+for a real-world example, here’s the raw **JSON data** for the [current solar weather](https://services.swpc.noaa.gov/products/geospace/planetary-k-index-dst.json)  
+This is often used to **predict aurora displays** in the Arctic Circle
 
-![Solar data raw JSON](https://raw.githubusercontent.com/front-end-materials/images/master/json-api/solar-raw-json.png)
+![Solar data raw JSON](https://raw.githubusercontent.com/TECH3015/lectures/master/imgs/json-api/solar-raw-json.png)
 
 ---
 
 # JSON: **12**
-<!-- .slide: class="left-align crammed smalltext smallcode" -->
+<!-- .slide: class="left-align crammed smalltext" -->
 
-[space weather readings are freely available](https://services.swpc.noaa.gov/) from [noaa.gov](https://www.noaa.gov/)—this solar weather data is in a **nested array**, with the first array as a **header row**:
+this solar weather data is in a **nested array**, with the first array as a **header row**:
 
 ```json
 [
@@ -243,16 +219,19 @@ here’s the raw **JSON data** for the [current solar weather](https://services.
 ]
 ```
 
-- access the first `"time_tag"` date at `[1][0]`
-- the `"planetary_k_index"` ([K-index](https://en.wikipedia.org/wiki/K-index)) data (`"2.67"`) at `[1][1]`
-- and the "dst" ([disturbance storm time](https://en.wikipedia.org/wiki/Disturbance_storm_time_index)) at `[1][2]`
+So you access the first `"time_tag"` date by starting at `[1][0]`,  
+the `"planetary_k_index"` ([K-index](https://en.wikipedia.org/wiki/K-index)) data (`"2.67"`) with `[1][1]`  
+and the "dst" ([disturbance storm time](https://en.wikipedia.org/wiki/Disturbance_storm_time_index)) at `[1][2]`
+
+Various other [space weather readings are freely available](https://services.swpc.noaa.gov/) from [noaa.gov](https://www.noaa.gov/)
 
 ---
 
 # JSON **13**
-<!-- .slide: class="left-align smalltext smallcode" -->
+<!-- .slide: class="left-align smalltext" -->
 
-the data is **stored in a variable** called `jsonData`—the `processData` function gets, formats and displays it (`showData` is the ID of the element that shows… the data!)
+if the **data is stored** in a variable called `jsonData`, this `processData` function will get, format and display it  
+`showData` is the ID of the element that will show… the data!
 
 ```js
 const processData = () => {
@@ -290,10 +269,11 @@ abbreviated for clarity.
 - **show initiative** by presenting data in an interesting way
 - you may need to **run your code** on a **server**
 - you often need to apply for an **API key**
+- there are good [social media APIs](https://www.programmableweb.com/news/top-10-social-apis-facebook-twitter-and-google-plus/analysis/2015/02/17)
 - [Google Maps API](https://developers.google.com/maps/documentation/javascript/) now wants your credit card :-(
 
 [What Is an API… Why Does It Matter? (M. Patterson 2015)](https://sproutsocial.com/insights/what-is-an-api/)  
-[Find Social media APIs on the web's largest API directory](https://www.programmableweb.com/category/Social/apis)
+[Search the Largest API Directory on the Web](https://www.programmableweb.com/category/Social/apis)
 
 ---
 
@@ -304,12 +284,12 @@ abbreviated for clarity.
 
 - all **JavaScript is insecure** as it can be read from the browser
 - if you store your API key in JavaScript, **anyone can read it**
-- **don't worry**—this is **not a problem for your assignment**!
+- **not to worry**—this is **not a problem for your assignment**!
 
 Extra info: **Just getting data** is fine, but if you're **sending new data** *to* an API, *anyone* could use your key, so it has to be secure. Most options store the key on the server or use [OAuth](https://oauth.net/ "An authorization framework enabling a third-party applications to obtain limited access to an HTTP service").
 
 See: [how can you secure a JavaScript application's API calls](https://stackoverflow.com/a/18516778/123033)  
-and [Securing API Keys in a JavaScript Single Page App](http://billpatrianakos.me/blog/2016/02/15/securing-api-keys-in-a-javascript-single-page-app/ "Bill Patrianakos, 2016")
+and [Securing API Keys in a Client Side JavaScript App](http://billpatrianakos.me/blog/2013/09/12/securing-api-keys-in-a-client-side-javascript-app/ "Bill Patrianakos, 2013")
 
 ---
 
@@ -326,13 +306,3 @@ Cross-origin resource sharing (CORS) allows restricted resources (e.g. fonts) to
 
 See: [Using CORS](https://www.html5rocks.com/en/tutorials/cors/), 
 [CORS (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), [CORS in detail (Stack Overflow)](https://stackoverflow.com/a/43881141/123033)
-
-===
-
-# QUESTIONS?
-
-**please ask now…**
-
-No crowding around the podium afterwards!
-
-Talk to Graeme for module-related issues
